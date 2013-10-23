@@ -1,0 +1,3 @@
+pause
+compass w
+pause
