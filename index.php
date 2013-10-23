@@ -1,6 +1,8 @@
 <?php
 include_once("include/config.php");
 
+//テスト
+
 //ページパラメータを変数に格納
 $page = $_REQUEST["page"];
 
