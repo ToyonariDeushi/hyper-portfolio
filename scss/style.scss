@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "compass";
+@import "mixin";
 
 $sprite-sprite-dimensions: true;
 $sprites:sprite-map("../images/sprite/*.png");
@@ -259,20 +260,6 @@ span.bold { font-weight: bold; }
 
 small { color: #f00; }
 
-// 手動clearfix
-//----------------------------------------
-@mixin clearfix {
-	
-	&:after {
-		visibility: hidden;
-		display: block;
-		font-size: 0;
-		content: " ";
-		clear: both;
-		height: 0;
-	}
-}
-
 /*----------------------------------------------------------------------------------------------------
 
 
@@ -325,7 +312,6 @@ animation
 	0%   { color: #fff; text-shadow: 0 0 2px #fff, 0 5px 0 rgba(0,0,0,0.6); }
 	100% { color: #000; text-shadow: 0 0 2px #000, 0 5px 0 rgba(0,0,0,0.6); }
 }
-
 
 /*----------------------------------------------------------------------------------------------------
 
