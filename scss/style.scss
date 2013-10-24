@@ -1027,7 +1027,7 @@ footer
 			position: absolute;
 			top: 50%;
 			left: 1px;
-			border-radius: 1px;
+			@include border-radius(1px);
 			border: 1px solid #ddd;
 			background: #f1f1f1;
 		}
@@ -1062,7 +1062,7 @@ footer
 			position: absolute;
 			top: 50%;
 			right: 1px;
-			border-radius: 1px;
+			@include border-radius(1px);
 			border: 1px solid #ddd;
 			background: #f1f1f1;
 		}
@@ -1691,7 +1691,7 @@ entry
 			padding: 3px 5px;
 			height: 30px;
 			color: #fff;
-			border-radius: 3px;
+			@include border-radius(3px);
 			border: 1px solid #69c;
 			background: #69c;
 			@include box-sizing(border-box);
