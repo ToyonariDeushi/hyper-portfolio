@@ -1179,6 +1179,10 @@ footer
   position: absolute;
   top: 50%;
   left: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
   border-radius: 1px;
   border: 1px solid #ddd;
   background: #f1f1f1;
@@ -1211,6 +1215,10 @@ footer
   position: absolute;
   top: 50%;
   right: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
   border-radius: 1px;
   border: 1px solid #ddd;
   background: #f1f1f1;
@@ -1772,6 +1780,10 @@ entry
   padding: 3px 5px;
   height: 30px;
   color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #69c;
   background: #69c;
