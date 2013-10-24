@@ -290,20 +290,6 @@ animation
 	100% { background: url(../images/bg_space.jpg) 1024px 1024px repeat; }
 }
 
-@-webkit-keyframes space2 {
-	0% { background: url(../images/f91.png) 2000px 290px repeat; }
-	50% { background: url(../images/f91.png) 1000px 100px repeat; }
-	70% { background: url(../images/f91.png) 500px 150px repeat; }
-	100% { background: url(../images/f91.png) -200px -200px repeat; }
-}
-
-@-moz-keyframes space2 {
-	0% { background: url(../images/f91.png) 2000px 290px repeat; }
-	50% { background: url(../images/f91.png) 1000px 100px repeat; }
-	70% { background: url(../images/f91.png) 500px 150px repeat; }
-	100% { background: url(../images/f91.png) -200px -200px repeat; }
-}
-
 @-webkit-keyframes anime1 {
 	0%   { color: #ef0000; text-shadow: 0 0 2px #ef0000, 0 5px 0 rgba(0, 0, 0, 0.6); }
 	11%  { color: #e88000; text-shadow: 0 0 2px #e88000, 0 5px 0 rgba(0, 0, 0, 0.6); }
@@ -371,24 +357,6 @@ header
 		background: url(../images/bg_space.jpg) 0 0 repeat;
 		-webkit-animation: space 50s linear infinite;
 		-moz-animation: space 50s linear infinite;
-		
-		&:hover {
-			
-			&:before {
-				content: "";
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 290px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 100;
-				background: url(../images/f91.png) -200px -200px no-repeat;
-				-webkit-animation: space2 4s ease-in-out 5s 1;
-				-moz-animation: space2 4s ease-in-out 5s 1;
-			}
-		}
 
 		* {
 			text-decoration: none;
