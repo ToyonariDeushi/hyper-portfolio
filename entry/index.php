@@ -293,15 +293,7 @@ $data_add_comment_count = mysql_fetch_array($result_add_comment_count);
 
 
 
-
-
 <?php
-$email = "t-deushi@tyrellsys.com";
-$default = "http://www.somewhere.com/homestar.jpg";
-$size = 60;
-
-$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
 function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
     $url = 'http://www.gravatar.com/avatar/';
     $url .= md5( strtolower( trim( $email ) ) );
@@ -312,9 +304,10 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
             $url .= ' ' . $key . '="' . $val . '"';
         $url .= ' />';
     }
-    return $url;
 }
 ?>
+
+
 
 
 
@@ -456,6 +449,16 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 	}
 	else { $comment_path = $data_comment["icon_user_name"].$data_comment["icon_user_ext"]; }
 ?>
+
+<?php
+$email = $data_comment["user_mail"];
+$default = $DOCUMENT_ROOT_URL."images/icon_guest01.png";
+$size = 60;
+
+$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+
+
+?>
 				<article>
 					<header>
 						<h3><?php echo $data_comment["user_name"] ?></h3>
@@ -510,6 +513,14 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 			}
 		}
 		else { $comment_add_path = $data_add_comment["icon_add_user_name"].$data_add_comment["icon_add_user_ext"]; }
+?>
+
+<?php
+$email = $data_add_comment["user_mail"];
+$default = $DOCUMENT_ROOT_URL."images/icon_guest01.png";
+$size = 60;
+
+$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 ?>
 					<article>
 						<header>
