@@ -592,7 +592,6 @@ body {
   transition: all 0.2s ease-in;
 }
 #global-nav a:hover {
-  padding-top: 30px;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#00FFFFFF', endColorstr='#80FFFFFF');
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(255, 255, 255, 0.5)));
@@ -600,19 +599,6 @@ body {
   background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.5) 100%);
   background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.5) 100%);
   background-image: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.5) 100%);
-}
-#global-nav a:hover:before {
-  opacity: 1;
-  visibility: visible;
-  content: "";
-  margin: 0 0 0 -5px;
-  padding: 0;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  border-top: 5px solid #fff;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
 }
 
 /*------------------------------------------------------------
@@ -1033,6 +1019,9 @@ footer
   font-size: 20px;
   color: #fff;
   text-decoration: none;
+}
+#footer-nav a:hover {
+  color: #2c8799;
 }
 
 #copyright {
@@ -1596,9 +1585,25 @@ entry
   padding: 20px;
   background: #fff;
 }
+#comment-form:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 #comment-form dl {
   margin: 0;
   padding: 0;
+}
+#comment-form dl:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 #comment-form dl input {
   margin: 0;

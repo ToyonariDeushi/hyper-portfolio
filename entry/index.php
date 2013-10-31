@@ -556,6 +556,34 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 					<p><input type="submit" name="submit" value="コメントを投稿" /></p>
 				</form>
 			</section>
+			
+			
+			
+<?php
+
+$email = "t-deushi@tyrellsys.com";
+$default = "http://www.somewhere.com/homestar.jpg";
+$size = 60;
+
+$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+
+function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+    $url = 'http://www.gravatar.com/avatar/';
+    $url .= md5( strtolower( trim( $email ) ) );
+    $url .= "?s=$s&d=$d&r=$r";
+    if ( $img ) {
+        $url = '<img src="' . $url . '"';
+        foreach ( $atts as $key => $val )
+            $url .= ' ' . $key . '="' . $val . '"';
+        $url .= ' />';
+    }
+    return $url;
+}
+
+ 
+?>
+			<img src="<?php echo $grav_url; ?>" alt="" />
+			
 		</div>
 		<?php include_once("../include/side-cont.php"); ?>
 	</div>
