@@ -290,6 +290,35 @@ AND comment.id = add_comment.comment_id
 $result_add_comment_count = mysql_query($sql_add_comment_count, $db_con);
 $data_add_comment_count = mysql_fetch_array($result_add_comment_count);
 ?>
+
+
+
+
+
+<?php
+$email = "t-deushi@tyrellsys.com";
+$default = "http://www.somewhere.com/homestar.jpg";
+$size = 60;
+
+$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+
+function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+    $url = 'http://www.gravatar.com/avatar/';
+    $url .= md5( strtolower( trim( $email ) ) );
+    $url .= "?s=$s&d=$d&r=$r";
+    if ( $img ) {
+        $url = '<img src="' . $url . '"';
+        foreach ( $atts as $key => $val )
+            $url .= ' ' . $key . '="' . $val . '"';
+        $url .= ' />';
+    }
+    return $url;
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -430,7 +459,7 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 				<article>
 					<header>
 						<h3><?php echo $data_comment["user_name"] ?></h3>
-						<figure><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/<?php echo $comment_path ?>" alt="<?php echo $data_comment["user_name"] ?>" width="60" height="60" /></figure>
+						<figure><img src="<?php echo $grav_url; ?>" alt="<?php echo $data_comment["user_name"] ?>" width="60" height="60" /></figure>
 					</header>
 					<p><?php echo nl2br($data_comment["comment_txt"]) ?></p>
 					<footer>
@@ -485,7 +514,7 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 					<article>
 						<header>
 							<h4><?php echo $data_add_comment["user_name"] ?></h4>
-							<figure><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/<?php echo $comment_add_path ?>" alt="<?php echo $data_add_comment["user_name"] ?>" width="60" height="60" /></figure>
+							<figure><img src="<?php echo $grav_url; ?>" alt="<?php echo $data_add_comment["user_name"] ?>" width="60" height="60" /></figure>
 						</header>
 						<p><?php echo nl2br($data_add_comment["comment_txt"]) ?></p>
 						<footer>
@@ -513,13 +542,13 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 					<input type="hidden" name="auth" value="<?php echo $string ?>" />
 					<dl>
 						<dt><label for="user_name">お名前（必須）</label></dt>
-							<dd><input type="text" name="user_name" id="user_name" value="<?php echo $_SESSION["user_name"] ?>" placeholder="お名前を入力" required="required" /></dd>
+							<dd><input type="text" name="user_name" id="user_name" value="<?php echo $_SESSION["user_name"] ?>" placeholder="お名前を入力" required /></dd>
 						<dt><label for="user_mail">メールアドレス（必須・非公開）</label></dt>
-							<dd><input type="email" name="user_mail" id="user_mail" value="<?php echo $_SESSION["user_mail"] ?>" placeholder="メールアドレスを入力" required="required" /></dd>
+							<dd><input type="email" name="user_mail" id="user_mail" value="<?php echo $_SESSION["user_mail"] ?>" placeholder="メールアドレスを入力" required /></dd>
 						<dt><label for="user_url">URL</label></dt>
 							<dd><input type="url" name="user_url" id="user_url" value="<?php echo $_SESSION["user_url"] ?>" placeholder="URLを入力" /></dd>
 						<dt><label for="comment_txt">コメント（必須）</label></dt>
-							<dd><textarea name="comment_txt" id="comment_txt" placeholder="コメントを入力" required="required"><?php echo $_SESSION["comment_txt"] ?></textarea></dd>
+							<dd><textarea name="comment_txt" id="comment_txt" placeholder="コメントを入力" required><?php echo $_SESSION["comment_txt"] ?></textarea></dd>
 						<dt>使用アイコン（参照・60x60）</dt>
 							<dd><input type="file" name="user_img" size="58" /></dd>
 						<dt>使用アイコン（デフォルト）</dt>
@@ -550,7 +579,7 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 						<dt><label for="img_auth">画像認証（必須）</label></dt>
 							<dd<?php echo $error_txt ?>>
 								<span id="hoge"><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/auth_image.png?str=<?php echo $string ?>" alt="画像認証" width="420" height="80" /></span>
-								<input type="text" name="img_auth" id="img_auth" value="" placeholder="上の画像内の文字を入力してください" required="required" />
+								<input type="text" name="img_auth" id="img_auth" value="" placeholder="上の画像内の文字を入力してください" required />
 							</dd>
 					</dl>
 					<p><input type="submit" name="submit" value="コメントを投稿" /></p>
@@ -559,31 +588,7 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 			
 			
 			
-<?php
 
-$email = "t-deushi@tyrellsys.com";
-$default = "http://www.somewhere.com/homestar.jpg";
-$size = 60;
-
-$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
-function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
-    $url = 'http://www.gravatar.com/avatar/';
-    $url .= md5( strtolower( trim( $email ) ) );
-    $url .= "?s=$s&d=$d&r=$r";
-    if ( $img ) {
-        $url = '<img src="' . $url . '"';
-        foreach ( $atts as $key => $val )
-            $url .= ' ' . $key . '="' . $val . '"';
-        $url .= ' />';
-    }
-    return $url;
-}
-
- 
-?>
-			<img src="<?php echo $grav_url; ?>" alt="" />
-			
 		</div>
 		<?php include_once("../include/side-cont.php"); ?>
 	</div>
