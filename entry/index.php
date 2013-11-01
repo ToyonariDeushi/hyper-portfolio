@@ -454,10 +454,7 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 $email = $data_comment["user_mail"];
 $default = $DOCUMENT_ROOT_URL."images/icon_guest01.png";
 $size = 60;
-
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
-
 ?>
 				<article>
 					<header>
@@ -519,7 +516,6 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 $email = $data_add_comment["user_mail"];
 $default = $DOCUMENT_ROOT_URL."images/icon_guest01.png";
 $size = 60;
-
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 ?>
 					<article>
@@ -596,10 +592,6 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 					<p><input type="submit" name="submit" value="コメントを投稿" /></p>
 				</form>
 			</section>
-			
-			
-			
-
 		</div>
 		<?php include_once("../include/side-cont.php"); ?>
 	</div>

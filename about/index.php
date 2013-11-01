@@ -42,10 +42,13 @@
 	padding: 20px;
 	width: 660px;
 	height: 408px;
+	height: 200px;
 	position: relative;
 	top: 0;
 	left: 0;
+	/*
 	background: url(../images/deushi.jpg) 0 0 no-repeat;
+	*/
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -132,8 +135,12 @@
 				<p>Photoshopを用いた写真の補正・加工を得意とします。</p>
 				<p>アニメとゲームと黒ビールとデスメタルが大好きです。<br />残念ながらヒップホップは聴きません。レゲェも聴きません。</p>
 			</section>
+<?php
+/*
 			<section>
 				<h2>SNS</h2>
+*/
+?>
 <style>
 dl#sns-deushi,0
 dl#career-deushi,
@@ -148,6 +155,8 @@ dl#environment-deushi { margin: 0; padding: 0; }
 		dl#environment-deushi dd { margin: 0 0 20px; padding: 0 0 0 10px; }
 
 </style>
+<?php
+/*
 				<dl id="sns-deushi">
 					<dt>Twitter</dt>
 						<dd><a href="http://twitter.com/HYPER_USHI" rel="nofollow" class="blank">@HYPER_USHI</a></dd>
@@ -163,10 +172,14 @@ dl#environment-deushi { margin: 0; padding: 0; }
 						<dd><a href="http://mixi.jp/show_friend.pl?id=16357479" rel="nofollow" class="blank">ハイパー牛</a></dd>
 				</dl>
 			</section>
+*/
+?>
 			<section>
 				<h2>経歴</h2>
 				<dl id="career-deushi">
-					<dt>2011年9月～現在</dt>
+					<dt>2012年5月～</dt>
+						<dd>株式会社タイレルシステムズに業務委託で入社ののち、同年7月より正社員で入社。</dd>
+					<dt>2011年9月～2012年12月</dt>
 						<dd>株式会社ジールコミュニケーションズに正社員で入社。</dd>
 					<dt>2009年7月～2011年7月</dt>
 						<dd>パワーテクノロジー株式会社に正社員で入社。<br />こちらは前職よりもよりSEOを強く扱っている会社で、主にDBと連携したHTML・PHPテンプレートの作成を行っています。<br />自社で展開しているWebサービスのサイト制作なども任されました。</dd>
@@ -200,6 +213,8 @@ dl#environment-deushi { margin: 0; padding: 0; }
 					<li>Flash　<span>★★</span>☆☆☆</li>
 				</ul>
 			</section>
+<?php
+/*
 			<section>
 				<h2>自宅の制作環境</h2>
 				<dl id="environment-deushi">
@@ -231,6 +246,8 @@ dl#environment-deushi { margin: 0; padding: 0; }
 						</dd>
 				</dl>
 			</section>
+*/
+?>
 		</div>
 		<?php include_once("../include/side-cont.php"); ?>
 	</div>
