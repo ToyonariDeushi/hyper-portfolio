@@ -336,7 +336,7 @@ header
 	> header {
 		margin: 0;
 		padding: 0;
-		height: 290px;
+		height: 250px;
 		position: relative;
 		top: 0;
 		left: 0;
@@ -355,7 +355,7 @@ header
 		h1 {
 			margin: 0;
 			padding: 40px 0 0;
-			height: 202px;
+			height: 162px;
 			@include box-sizing(border-box);
 
 			a {
@@ -836,8 +836,8 @@ footer
 	
 	> footer {
 		margin: 0;
-		padding: 100px 0 0;
-		height: 250px;
+		padding: 75px 0 0;
+		height: 200px;
 		//
 		// background: url(../images/bg_space.jpg) 0 0 repeat;
 		// -webkit-animation: space 50s linear infinite;
@@ -849,7 +849,7 @@ footer
 }
 	
 #footer-nav {
-	margin: 0 auto 100px;
+	margin: 0 auto 75px;
 	padding: 0;
 	width: 980px;
 	text-align: center;
@@ -1410,7 +1410,7 @@ entry
 			margin: 0;
 			padding: 0;
 			
-			> ul {
+			ul {
 				margin: 0;
 				padding: 0;
 				@include clearfix;
