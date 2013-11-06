@@ -492,7 +492,7 @@ body {
 #wrapper > header {
   margin: 0;
   padding: 0;
-  height: 290px;
+  height: 250px;
   position: relative;
   top: 0;
   left: 0;
@@ -510,7 +510,7 @@ body {
 #wrapper > header h1 {
   margin: 0;
   padding: 40px 0 0;
-  height: 202px;
+  height: 162px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -988,8 +988,8 @@ footer
 ------------------------------------------------------------*/
 #wrapper > footer {
   margin: 0;
-  padding: 100px 0 0;
-  height: 250px;
+  padding: 75px 0 0;
+  height: 200px;
   background: #000;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -997,7 +997,7 @@ footer
 }
 
 #footer-nav {
-  margin: 0 auto 100px;
+  margin: 0 auto 75px;
   padding: 0;
   width: 980px;
   text-align: center;
@@ -1506,11 +1506,11 @@ entry
   margin: 0;
   padding: 0;
 }
-#comment > article > footer > ul {
+#comment > article > footer ul {
   margin: 0;
   padding: 0;
 }
-#comment > article > footer > ul:after {
+#comment > article > footer ul:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -1518,7 +1518,7 @@ entry
   clear: both;
   height: 0;
 }
-#comment > article > footer > ul li {
+#comment > article > footer ul li {
   float: left;
   margin: 0 21px 0 0;
   padding: 0;
@@ -1530,7 +1530,7 @@ entry
   top: 0;
   left: 0;
 }
-#comment > article > footer > ul li:before {
+#comment > article > footer ul li:before {
   content: "";
   margin: 0;
   padding: 0;
@@ -1541,7 +1541,7 @@ entry
   right: -11px;
   background: #d7d7d7;
 }
-#comment > article > footer > ul li:last-child:before {
+#comment > article > footer ul li:last-child:before {
   content: "";
   margin: 0;
   padding: 0;
@@ -1552,14 +1552,14 @@ entry
   left: 0;
   background: none;
 }
-#comment > article > footer > ul a {
+#comment > article > footer ul a {
   margin: 0;
   padding: 0;
   height: 13px;
   line-height: 13px;
   font-size: 12px;
 }
-#comment > article > footer > ul form {
+#comment > article > footer ul form {
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -1568,7 +1568,7 @@ entry
   top: -3px;
   left: 0;
 }
-#comment > article > footer > ul input[type=submit] {
+#comment > article > footer ul input[type=submit] {
   cursor: pointer;
   display: inline-block;
   margin: 0;
@@ -1577,7 +1577,7 @@ entry
   font-size: 11px;
   background: none;
 }
-#comment > article > footer > ul input[type=submit]:hover {
+#comment > article > footer ul input[type=submit]:hover {
   text-decoration: underline;
 }
 
