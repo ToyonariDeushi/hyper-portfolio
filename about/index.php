@@ -22,11 +22,11 @@
 </head>
 <body id="about">
 <?php include_once("../include/aa.php"); ?>
-<div id="wrapper">
+<div class="wrapper">
 	<?php include_once("../include/header.php"); ?>
-	<div id="content">
+	<div class="content">
 		<?php include_once("../include/breadcrumb.php"); ?>
-		<div id="main-cont">
+		<div class="main-cont">
 			<section>
 				<h2>About</h2>
 				<p>このサイトは出牛の趣味全開かつ自己満足的なポートフォリオサイトです。</p>

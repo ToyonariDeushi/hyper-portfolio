@@ -92,6 +92,7 @@ if ( !$_REQUEST["search"] ) {
 <meta name="description" content="<?php echo $description ?>" />
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="robots" content="<?php echo $ROBOTS ?>" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <link rel="stylesheet" href="<?php echo $DOCUMENT_ROOT_URL ?>css/style.css" media="all" />
 <link rel="shortcut icon" href="<?php echo $DOCUMENT_ROOT_URL ?>images/icon_favicon.ico" />
 <link rel="icon" href="<?php echo $DOCUMENT_ROOT_URL ?>images/icon_favicon.ico" />
@@ -105,11 +106,11 @@ if ( !$_REQUEST["search"] ) {
 <![endif]-->
 </head>
 <body id="top">
-<div id="wrapper">
+<div class="wrapper">
 	<?php include_once("include/header.php"); ?>
-	<div id="content">
+	<div class="content">
 		<?php include_once("include/breadcrumb.php"); ?>
-		<div id="main-cont">
+		<div class="main-cont">
 <?php
 // エントリー情報
 while ( $data = mysql_fetch_array($result) ) {
@@ -149,14 +150,16 @@ while ( $data = mysql_fetch_array($result) ) {
 	$result_add_comment_count = mysql_query($sql_add_comment_count, $db_con);
 	$data_add_comment_count = mysql_fetch_array($result_add_comment_count);
 ?>
-			<article>
+			<article class="entry-article">
 				<header>
 					<h2><a href="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/"><?php echo $data["article_ttl"] ?></a></h2>
 					<time datetime="<?php echo $tag_date ?>"><?php echo $jp_date ?></time>
 					<p>Comment(<?php echo $data_comment_count["c_num"] + $data_add_comment_count["a_num"] ?>)</p>
 				</header>
-				<p><?php echo $article_intro ?>...<a href="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/">続きを読む</a></p>
-				<figure><a href="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/"><img src="<?php echo $thumb_img_path ?>" alt="<?php echo $data["article_ttl"] ?>" width="180" height="180" /></a></figure>
+				<div class="entry-cont">
+					<p><?php echo $article_intro ?>...<a href="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/">続きを読む</a></p>
+					<figure><a href="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/"><img src="<?php echo $thumb_img_path ?>" alt="<?php echo $data["article_ttl"] ?>" width="180" height="180" /></a></figure>
+				</div>
 				<footer>
 					<dl class="category">
 						<dt>カテゴリー</dt>

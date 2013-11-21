@@ -57,7 +57,7 @@ if ( $_REQUEST["date_time"] ) {
 	}
 }
 ?>
-<nav id="breadcrumb">
+<nav class="breadcrumb">
 			<ol>
 				<li>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">

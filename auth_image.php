@@ -24,17 +24,19 @@ $textColor = imagecolorallocate($image, 255, 255, 255);
 
 // フォントファイル
 $font_list = array(
-"font/NINJAS.TTF",
 "font/28 Days Later.ttf",
 "font/Burton_s_nigthmare2000.ttf",
+"font/Orial_Bold.otf"
+/*
+"font/NINJAS.TTF",
 "font/MAROC___.TTF",
-"font/Orial_Bold.otf",
 "font/PEIXE___.ttf",
 "font/SF Zimmerman.ttf",
 "font/youmurdererbb_reg.ttf"
+*/
 );
 
-$font = $font_list[mt_rand(0,7)];
+$font = $font_list[mt_rand(0,2)];
 /*
 function getRandomString($nLengthRequired = 8){
 	$sCharList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

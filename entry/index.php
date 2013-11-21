@@ -290,9 +290,6 @@ AND comment.id = add_comment.comment_id
 $result_add_comment_count = mysql_query($sql_add_comment_count, $db_con);
 $data_add_comment_count = mysql_fetch_array($result_add_comment_count);
 ?>
-
-
-
 <?php
 function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
     $url = 'http://www.gravatar.com/avatar/';
@@ -306,12 +303,6 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
     }
 }
 ?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -334,12 +325,12 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 <![endif]-->
 </head>
 <body id="entry">
-<div id="wrapper">
+<div class="wrapper">
 	<?php include_once("../include/header.php"); ?>
-	<div id="content">
+	<div class="content">
 		<?php include_once("../include/breadcrumb.php"); ?>
-		<div id="main-cont">
-			<article>
+		<div class="main-cont">
+			<article class="entry-article">
 				<header>
 					<h2><?php echo $data["article_ttl"] ?></h2>
 					<time datetime="<?php echo $tag_date ?>"><?php echo $jp_date ?></time>
@@ -421,7 +412,7 @@ while ( $data_related = mysql_fetch_array($result_related) ) {
 <?php } ?>
 				</ul>
 			</section>
-			<section id="comment">
+			<section>
 				<h2>Comment</h2>
 <?php
 while ( $data_comment = mysql_fetch_array($result_comment) ) {
@@ -449,35 +440,37 @@ while ( $data_comment = mysql_fetch_array($result_comment) ) {
 	}
 	else { $comment_path = $data_comment["icon_user_name"].$data_comment["icon_user_ext"]; }
 ?>
-
 <?php
 $email = $data_comment["user_mail"];
 $default = $DOCUMENT_ROOT_URL."images/icon_guest01.png";
 $size = 60;
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 ?>
-				<article>
-					<header>
-						<h3><?php echo $data_comment["user_name"] ?></h3>
-						<figure><img src="<?php echo $grav_url; ?>" alt="<?php echo $data_comment["user_name"] ?>" width="60" height="60" /></figure>
-					</header>
-					<p><?php echo nl2br($data_comment["comment_txt"]) ?></p>
-					<footer>
-						<ul>
-							<li><time datetime="<?php echo $comment_tag_date ?>"><?php echo $comment_jp_date ?></time></li>
+				<article class="comment-article">
+					<div class="comment-wrap">
+						<header class="comment-header">
+							<h3><?php echo $data_comment["user_name"] ?></h3>
+							<figure><img src="<?php echo $grav_url; ?>" alt="<?php echo $data_comment["user_name"] ?>" width="60" height="60" /></figure>
+						</header>
+						<div class="comment-body">
+							<p><?php echo nl2br($data_comment["comment_txt"]) ?></p>
+						</div>
+						<footer class="comment-footer">
+							<ul>
+								<li><time datetime="<?php echo $comment_tag_date ?>"><?php echo $comment_jp_date ?></time></li>
 <?php if ( !empty($data_comment["user_url"]) ) { ?>
-							<li><a href="<?php echo $data_comment["user_url"] ?>" rel="nofollow" class="blank">URL</a></li>
+								<li><a href="<?php echo $data_comment["user_url"] ?>" rel="nofollow" class="blank">URL</a></li>
 <?php } else { ?>
-							<li>URL</li>
+								<li>URL</li>
 <?php } ?>
-							<li>
-								<form method="post" action="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/#comment-form">
-									<input type="hidden" name="comment_id" value="<?php echo $data_comment["id"] ?>" />
-									<input type="submit" value="返信" />
-								</form>
-							</li>
-						</ul>
-					</footer>
+								<li>
+									<form method="post" action="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/#comment-form">
+										<input type="hidden" name="comment_id" value="<?php echo $data_comment["id"] ?>" />
+										<input type="submit" value="返信" />
+									</form>
+								</li>
+							</ul>
+						</footer>
 <?php
 	$sql_add_comment = "
 	SELECT *
@@ -511,33 +504,37 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 		}
 		else { $comment_add_path = $data_add_comment["icon_add_user_name"].$data_add_comment["icon_add_user_ext"]; }
 ?>
-
 <?php
 $email = $data_add_comment["user_mail"];
 $default = $DOCUMENT_ROOT_URL."images/icon_guest01.png";
 $size = 60;
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 ?>
-					<article>
-						<header>
-							<h4><?php echo $data_add_comment["user_name"] ?></h4>
-							<figure><img src="<?php echo $grav_url; ?>" alt="<?php echo $data_add_comment["user_name"] ?>" width="60" height="60" /></figure>
-						</header>
-						<p><?php echo nl2br($data_add_comment["comment_txt"]) ?></p>
-						<footer>
-							<ul>
-								<li><time datetime="<?php echo $add_comment_tag_date ?>"><?php echo $add_comment_jp_date ?></time></li>
+						<article class="reply-article">
+							<div class="reply-wrap">
+								<header class="reply-header">
+									<h4><?php echo $data_add_comment["user_name"] ?></h4>
+									<figure><img src="<?php echo $grav_url; ?>" alt="<?php echo $data_add_comment["user_name"] ?>" width="60" height="60" /></figure>
+								</header>
+								<div class="reply-body">
+									<p><?php echo nl2br($data_add_comment["comment_txt"]) ?></p>
+								</div>
+								<footer class="reply-footer">
+									<ul>
+										<li><time datetime="<?php echo $add_comment_tag_date ?>"><?php echo $add_comment_jp_date ?></time></li>
 <?php if ( !empty($data_add_comment["user_url"]) ) { ?>
-								<li><a href="<?php echo $data_add_comment["user_url"] ?>" rel="nofollow" class="blank">URL</a></li>
+										<li><a href="<?php echo $data_add_comment["user_url"] ?>" rel="nofollow" class="blank">URL</a></li>
 <?php } else { ?>
-								<li>URL</li>
+										<li>URL</li>
 <?php } ?>
-							</ul>
-						</footer>
-					</article>
+									</ul>
+								</footer>
+							</div>
+						</article>
 <?php
 	}
 ?>
+					</div>
 				</article>
 <?php
 }
@@ -556,8 +553,14 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 							<dd><input type="url" name="user_url" id="user_url" value="<?php echo $_SESSION["user_url"] ?>" placeholder="URLを入力" /></dd>
 						<dt><label for="comment_txt">コメント（必須）</label></dt>
 							<dd><textarea name="comment_txt" id="comment_txt" placeholder="コメントを入力" required><?php echo $_SESSION["comment_txt"] ?></textarea></dd>
+<?php
+/*
 						<dt>使用アイコン（参照・60x60）</dt>
 							<dd><input type="file" name="user_img" size="58" /></dd>
+*/
+?>
+<?php
+/*
 						<dt>使用アイコン（デフォルト）</dt>
 							<dd>
 								<ul>
@@ -583,9 +586,11 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 									</li>
 								</ul>
 							</dd>
+*/
+?>
 						<dt><label for="img_auth">画像認証（必須）</label></dt>
 							<dd<?php echo $error_txt ?>>
-								<span id="hoge"><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/auth_image.png?str=<?php echo $string ?>" alt="画像認証" width="420" height="80" /></span>
+								<img src="<?php echo $DOCUMENT_ROOT_URL ?>images/auth_image.png?str=<?php echo $string ?>" alt="画像認証" width="420" height="80" />
 								<input type="text" name="img_auth" id="img_auth" value="" placeholder="上の画像内の文字を入力してください" required />
 							</dd>
 					</dl>
