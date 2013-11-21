@@ -1,9 +1,9 @@
-<div id="side-cont">
-			<form method="post" action="<?php echo $DOCUMENT_ROOT_URL ?>search.php" id="search">
+<div class="side-cont">
+			<form method="post" action="<?php echo $DOCUMENT_ROOT_URL ?>search.php" class="search">
 				<input type="text" name="search" value="" placeholder="記事タイトルを検索" />
 				<input type="image" name="submit" src="<?php echo $DOCUMENT_ROOT_URL ?>images/icon_search-glass.png" width="15" height="18" alt="送信ボタン" />
 			</form>
-			<nav id="side-nav">
+			<nav class="side-nav">
 				<section>
 					<h2>Entry</h2>
 					<ul>

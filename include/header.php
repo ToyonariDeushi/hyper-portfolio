@@ -1,6 +1,6 @@
-<header>
+<header class="site-header">
 		<h1><a href="<?php echo $DOCUMENT_ROOT_URL ?>">HYPER PORTFOLIO</a></h1>
-		<nav id="global-nav">
+		<nav class="global-nav">
 			<ul>
 				<li><a href="<?php echo $DOCUMENT_ROOT_URL ?>">Home</a></li>
 				<li><a href="<?php echo $DOCUMENT_ROOT_URL ?>entry/">Entry</a></li>
