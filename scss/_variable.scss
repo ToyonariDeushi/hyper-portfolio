@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+// 横幅
+$site-width:960px;
+
+// ブレークポイント
+$small:  "only screen and (max-width:767px)";
+$middle: "only screen and (min-width:768px) and (max-width:959px)";
+$large:  "only screen and (min-width:960px)";
+
+
+$small-size: 480px;
+$middle-size: 768px;
+$large-size: 980px;
+
+//
+// $small: "screen and (max-width:767px)";
+// $middle: "screen and (min-width:768px) and (max-width:979px)";
+// $large: "screen and (min-width:980px) and (max-width:1024px)";
+//
+
+//■default-set
+$home: "\68\6f\6d\65";
+$tag: "\74\61\67";
+$load: "\6c\6f\61\64";
+$LquaAlt: "\71\75\61\31";
+$RquaAlt: "\71\75\61\32";
+$Lqua: "\71\75\61\33";
+$Rqua: "\71\75\61\34";
+$check: "\63\68\65\63\6b";
+$punish: "\70\75\6e\69\73\68";
+$clip: "\63\6c\69\70";

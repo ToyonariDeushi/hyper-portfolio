@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'LeinBold';
+	src: url('../font/LeinBold.eot');
+	src: local('☺'), url('../font/LeinBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'maagkramp';
+	src: url('../font/maagkramp.eot');
+	src: local('☺'), url('../font/maagkramp.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'bebas';
+	src: url('../font/bebas.eot');
+	src: local('☺'), url('../font/bebas.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'default-set';
+	src:url('../font/default-set.eot');
+	src:url('../font/default-set.eot?#iefix') format('embedded-opentype'),
+		url('../font/default-set.svg#default-set') format('svg'),
+		url('../font/default-set.woff') format('woff'),
+		url('../font/default-set.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

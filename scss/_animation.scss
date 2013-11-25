@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@-webkit-keyframes space {
+	0% { background: url(../images/bg_space.jpg) 0 0 repeat; }
+	100% { background: url(../images/bg_space.jpg) 1024px 1024px repeat; }
+}
+
+@-moz-keyframes space {
+	0% { background: url(../images/bg_space.jpg) 0 0 repeat; }
+	100% { background: url(../images/bg_space.jpg) 1024px 1024px repeat; }
+}
+
+@-webkit-keyframes anime1 {
+	0%   { color: #ef0000; text-shadow: 0 0 2px #ef0000, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	11%  { color: #e88000; text-shadow: 0 0 2px #e88000, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	22%  { color: #f0e000; text-shadow: 0 0 2px #f0e000, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	33%  { color: #80e800; text-shadow: 0 0 2px #80e800, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	44%  { color: #0fc010; text-shadow: 0 0 2px #0fc010, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	55%  { color: #04a085; text-shadow: 0 0 2px #04a085, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	66%  { color: #0059cc; text-shadow: 0 0 2px #0059cc, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	77%  { color: #2000e0; text-shadow: 0 0 2px #2000e0, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	88%  { color: #8000c8; text-shadow: 0 0 2px #8000c8, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	100% { color: #e000af; text-shadow: 0 0 2px #e000af, 0 5px 0 rgba(0, 0, 0, 0.6); }
+}
+
+@-moz-keyframes anime1 {
+	0%   { color: #ef0000; text-shadow: 0 0 2px #ef0000, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	11%  { color: #e88000; text-shadow: 0 0 2px #e88000, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	22%  { color: #f0e000; text-shadow: 0 0 2px #f0e000, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	33%  { color: #80e800; text-shadow: 0 0 2px #80e800, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	44%  { color: #0fc010; text-shadow: 0 0 2px #0fc010, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	55%  { color: #04a085; text-shadow: 0 0 2px #04a085, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	66%  { color: #0059cc; text-shadow: 0 0 2px #0059cc, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	77%  { color: #2000e0; text-shadow: 0 0 2px #2000e0, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	88%  { color: #8000c8; text-shadow: 0 0 2px #8000c8, 0 5px 0 rgba(0, 0, 0, 0.6); }
+	100% { color: #e000af; text-shadow: 0 0 2px #e000af, 0 5px 0 rgba(0, 0, 0, 0.6); }
+}
+
+@-webkit-keyframes anime2 {
+	0%   { color: #fff; text-shadow: 0 0 2px #fff, 0 5px 0 rgba(0,0,0,0.6); }
+	100% { color: #000; text-shadow: 0 0 2px #000, 0 5px 0 rgba(0,0,0,0.6); }
+}
+
+@-moz-keyframes anime2 {
+	0%   { color: #fff; text-shadow: 0 0 2px #fff, 0 5px 0 rgba(0,0,0,0.6); }
+	100% { color: #000; text-shadow: 0 0 2px #000, 0 5px 0 rgba(0,0,0,0.6); }
+}
