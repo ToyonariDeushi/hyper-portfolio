@@ -546,13 +546,13 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 					<input type="hidden" name="auth" value="<?php echo $string ?>" />
 					<dl>
 						<dt><label for="user_name">お名前（必須）</label></dt>
-							<dd><input type="text" name="user_name" id="user_name" value="<?php echo $_SESSION["user_name"] ?>" placeholder="お名前を入力" required /></dd>
+							<dd><input type="text" name="user_name" id="user_name" value="<?php echo $_SESSION["user_name"] ?>" placeholder="お名前を入力" /></dd>
 						<dt><label for="user_mail">メールアドレス（必須・非公開）</label></dt>
-							<dd><input type="email" name="user_mail" id="user_mail" value="<?php echo $_SESSION["user_mail"] ?>" placeholder="メールアドレスを入力" required /></dd>
+							<dd><input type="email" name="user_mail" id="user_mail" value="<?php echo $_SESSION["user_mail"] ?>" placeholder="メールアドレスを入力" /></dd>
 						<dt><label for="user_url">URL</label></dt>
 							<dd><input type="url" name="user_url" id="user_url" value="<?php echo $_SESSION["user_url"] ?>" placeholder="URLを入力" /></dd>
 						<dt><label for="comment_txt">コメント（必須）</label></dt>
-							<dd><textarea name="comment_txt" id="comment_txt" placeholder="コメントを入力" required><?php echo $_SESSION["comment_txt"] ?></textarea></dd>
+							<dd><textarea name="comment_txt" id="comment_txt" placeholder="コメントを入力"><?php echo $_SESSION["comment_txt"] ?></textarea></dd>
 <?php
 /*
 						<dt>使用アイコン（参照・60x60）</dt>
@@ -588,10 +588,53 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 							</dd>
 */
 ?>
+
+
+
+<script src="../js/prototype.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<script>
+$(function(){
+	$('a.sys-reload-btn').click(function(){
+		return false;
+	})
+});
+</script>
+
+<script>
+jQuery( function() {
+	$('a.sys-reload-btn').live('click', function(event) {
+		// これがないとクリック先のURLに飛んでしまう
+		event.preventDefault();
+		// ajax_loader_bigはCSSでロード画像を定義
+		var loadimg = $('#ajax_loader');
+		loadimg.show();
+		// aタグについてるhrefの内容がはいる。GETパラメタも
+		var url = $(this).attr('href'); 
+		// areaタグの中身が全部、URLの内容に入れ替わる
+		$("#view").load(url, function(responseText, statusText, xhr) {
+			// ロードしたら画像を隠す
+			loadimg.hide();
+			// エラー判定
+			if(statusText == "success"){
+				alert("ロードに成功しました！");
+			}
+			if(statusText == "error") {
+				alert("エラー！！: " + xhr.status + " - " + xhr.statusText);
+			}
+		});
+	});
+});
+</script>
 						<dt><label for="img_auth">画像認証（必須）</label></dt>
-							<dd<?php echo $error_txt ?>>
-								<img src="<?php echo $DOCUMENT_ROOT_URL ?>images/auth_image.png?str=<?php echo $string ?>" alt="画像認証" width="420" height="80" />
-								<input type="text" name="img_auth" id="img_auth" value="" placeholder="上の画像内の文字を入力してください" required />
+							<dd<?php echo $error_txt ?> id="container">
+								<div id="ajax_loader"></div>
+								<p class="view"><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/auth_image.png?str=<?php echo $string ?>" alt="画像認証" width="420" height="80" id="reloadimg" /></p>
+								<p><a href="#" class="sys-reload-btn">画像の再読み込み</a></p>
+								<input type="text" name="img_auth" id="img_auth" value="" placeholder="上の画像内の文字を入力してください" />
 							</dd>
 					</dl>
 					<p><input type="submit" name="submit" value="コメントを投稿" /></p>
