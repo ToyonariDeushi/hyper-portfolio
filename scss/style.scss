@@ -1,111 +1,14 @@
-@charset "utf-8";
-@import "compass";
-@import "mixin";
+@charset "UTF-8";
 
-$sprite-sprite-dimensions: true;
-$sprites:sprite-map("../images/sprite/*.png");
-/**/
-$sprites-img:sprite-url($sprites);
-$xpos: left;
-@mixin sprite-background($name, $sprites, $sprites-img) {
-	background-image: $sprites-img;
-	background-repeat: no-repeat;
-	display: inline-block;
-	height: image-height(sprite-file($sprites, $name));
-	width: image-width(sprite-file($sprites, $name));
-	$ypos: round(nth(sprite-position($sprites, $name),2));
-	background-position: $xpos $ypos;
-}
-
-.icon_search-glass {
-	@include sprite-background(icon_search-glass, $sprites, $sprites-img);
-}
-
-$small-size: 480px;
-$middle-size: 768px;
-$large-size: 980px;
-
-$small: "screen and (max-width:767px)";
-$middle: "screen and (min-width:768px) and (max-width:979px)";
-$large: "screen and (min-width:980px) and (max-width:1024px)";
-
-
-/*----------------------------------------------------------------------------------------------------
-
-
-@font-face
-
-
-----------------------------------------------------------------------------------------------------*/
-@font-face {
-	font-family: 'LeinBold';
-	src: url('../font/LeinBold.eot');
-	src: local('☺'), url('../font/LeinBold.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'maagkramp';
-	src: url('../font/maagkramp.eot');
-	src: local('☺'), url('../font/maagkramp.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'bebas';
-	src: url('../font/bebas.eot');
-	src: local('☺'), url('../font/bebas.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'default-set';
-	src:url('../font/default-set.eot');
-	src:url('../font/default-set.eot?#iefix') format('embedded-opentype'),
-		url('../font/default-set.svg#default-set') format('svg'),
-		url('../font/default-set.woff') format('woff'),
-		url('../font/default-set.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-//
-//■default-set
-//
-//home
-//\68\6f\6d\65
-//
-//tag
-//\74\61\67
-//
-//load
-//\6c\6f\61\64
-//
-//LquaAlt
-//\71\75\61\31
-//
-//RquaAlt
-//\71\75\61\32
-//
-//Lqua
-//\71\75\61\33
-//
-//Rqua
-//\71\75\61\34
-//
-//check
-//\63\68\65\63\6b
-//
-//punish
-//\70\75\6e\69\73\68
-//
-//clip
-//\63\6c\69\70
-//
-
+@import "compass";// コンパス
+@import "reset";// リセット
+@import "media_queries";// メディアクエリー
+@import "variable";// 変数ファイル
+@import "font-face";// WEBフォント
+@import "sprite";// スプライト定義
+@import "mixin";// ミックスイン
+@import "animation";// アニメーション
+@import "ptp-13";// フォントサイズ指定
 
 /*----------------------------------------------------------------------------------------------------
 
@@ -129,7 +32,7 @@ default reset
 
 body,div,h1,h2,h3,h4,h5,h6,div,p,ul,ol,li,dl,dt,dd,form,input,textarea,pre,fieldset,blockquote,table,thead,tbody,tfoot,caption,th,td,
 section,article,aside,nav,menu,canvas,details,figure,figcaption,footer,header,hgroup,summary { margin: 0; padding: 0; line-height: 1; }
-p { margin: 0 0 1em 0; line-height: 26px; }
+p { margin: 0 0 1em 0; line-height: $px26; }
 ul, li, dl, dt, dd { list-style-type: none; line-height: 1; }
 
 a          { cursor: pointer; color: #2c8799; text-decoration: none; outline: 0; }
@@ -174,7 +77,7 @@ a.blank[target=_blank] {
 }
 
 em, address { font-style: normal; }
-strong      { line-height: 26px; font-size: 20px; font-weight: bold; color: #a22316; }
+strong      { line-height: $px26; font-size: $px20; font-weight: bold; color: #a22316; }
 del         { text-decoration: line-through; }
 abbr        { cursor: help; border-bottom: 1px dotted #999; }
 img         { max-width: 100%; height: auto; vertical-align: text-bottom; border: 0; }
@@ -187,10 +90,10 @@ label { cursor: pointer; }
 blockquote {
 	margin: 0 0 20px;
 	padding: 30px 15px;
-	line-height: 29px;
+	line-height: $px29;
 	color: #7387ca;
 	font-family: Folk Bold;
-	font-size: 19px;
+	font-size: $px19;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -203,7 +106,7 @@ blockquote {
 		margin: 0;
 		padding: 0;
 		font-family: default-set;
-		font-size: 25px;
+		font-size: $px25;
 		color: #ccc;
 		position: absolute;
 	}
@@ -272,59 +175,6 @@ small { color: #f00; }
 /*----------------------------------------------------------------------------------------------------
 
 
-animation
-
-
-----------------------------------------------------------------------------------------------------*/
-@-webkit-keyframes space {
-	0% { background: url(../images/bg_space.jpg) 0 0 repeat; }
-	100% { background: url(../images/bg_space.jpg) 1024px 1024px repeat; }
-}
-
-@-moz-keyframes space {
-	0% { background: url(../images/bg_space.jpg) 0 0 repeat; }
-	100% { background: url(../images/bg_space.jpg) 1024px 1024px repeat; }
-}
-
-@-webkit-keyframes anime1 {
-	0%   { color: #ef0000; text-shadow: 0 0 2px #ef0000, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	11%  { color: #e88000; text-shadow: 0 0 2px #e88000, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	22%  { color: #f0e000; text-shadow: 0 0 2px #f0e000, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	33%  { color: #80e800; text-shadow: 0 0 2px #80e800, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	44%  { color: #0fc010; text-shadow: 0 0 2px #0fc010, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	55%  { color: #04a085; text-shadow: 0 0 2px #04a085, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	66%  { color: #0059cc; text-shadow: 0 0 2px #0059cc, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	77%  { color: #2000e0; text-shadow: 0 0 2px #2000e0, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	88%  { color: #8000c8; text-shadow: 0 0 2px #8000c8, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	100% { color: #e000af; text-shadow: 0 0 2px #e000af, 0 5px 0 rgba(0, 0, 0, 0.6); }
-}
-
-@-moz-keyframes anime1 {
-	0%   { color: #ef0000; text-shadow: 0 0 2px #ef0000, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	11%  { color: #e88000; text-shadow: 0 0 2px #e88000, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	22%  { color: #f0e000; text-shadow: 0 0 2px #f0e000, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	33%  { color: #80e800; text-shadow: 0 0 2px #80e800, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	44%  { color: #0fc010; text-shadow: 0 0 2px #0fc010, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	55%  { color: #04a085; text-shadow: 0 0 2px #04a085, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	66%  { color: #0059cc; text-shadow: 0 0 2px #0059cc, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	77%  { color: #2000e0; text-shadow: 0 0 2px #2000e0, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	88%  { color: #8000c8; text-shadow: 0 0 2px #8000c8, 0 5px 0 rgba(0, 0, 0, 0.6); }
-	100% { color: #e000af; text-shadow: 0 0 2px #e000af, 0 5px 0 rgba(0, 0, 0, 0.6); }
-}
-
-@-webkit-keyframes anime2 {
-	0%   { color: #fff; text-shadow: 0 0 2px #fff, 0 5px 0 rgba(0,0,0,0.6); }
-	100% { color: #000; text-shadow: 0 0 2px #000, 0 5px 0 rgba(0,0,0,0.6); }
-}
-
-@-moz-keyframes anime2 {
-	0%   { color: #fff; text-shadow: 0 0 2px #fff, 0 5px 0 rgba(0,0,0,0.6); }
-	100% { color: #000; text-shadow: 0 0 2px #000, 0 5px 0 rgba(0,0,0,0.6); }
-}
-
-/*----------------------------------------------------------------------------------------------------
-
-
 common
 
 
@@ -377,7 +227,7 @@ header
 			
 			@media #{$small} {
 				width: 100%;
-				font-size: 50px;
+				font-size: $px50;
 				text-align: center;
 			}
 			@media #{$middle} {
@@ -435,7 +285,7 @@ header
 		padding: 50px 15px 0;
 		height: 88px;
 		font-family: maagkramp;
-		font-size: 20px;
+		font-size: $px20;
 		color: #fff;
 		text-decoration: none;
 		position: relative;
@@ -530,10 +380,10 @@ header
 			padding-left: 20px;
 			
 			&:before {
-				content: "\68\6f\6d\65";
-				line-height: 20px;
+				content: $home;
+				line-height: $px20;
 				font-family: default-set;
-				font-size: 16px;
+				font-size: $px16;
 			}
 		}
 		
@@ -559,7 +409,7 @@ header
 	}
 	
 	span {
-		line-height: 18px;
+		line-height: $px18;
 		color: #2c8799;
 	}
 }
@@ -620,14 +470,14 @@ header
 	h2 {
 		margin: 0 0 6px;
 		padding: 0;
-		font-size: 22px;
+		font-size: $px22;
 		color: #2c8799;
 		
 		a {
 			margin: 0;
 			padding: 0;
-			line-height: 26px;
-			font-size: 22px;
+			line-height: $px26;
+			font-size: $px22;
 		}
 	}
 		
@@ -635,7 +485,7 @@ header
 		display: block;
 		margin: 0 0 5px;
 		padding: 0;
-		font-size: 12px;
+		font-size: $px12;
 		color: #999;
 	}
 	
@@ -744,7 +594,7 @@ header
 		margin: 0;
 		padding: 0;
 		min-height: 21px;
-		line-height: 21px;
+		line-height: $px21;
 		
 		&:nth-child(1) {
 			margin-right: 5;
@@ -825,7 +675,7 @@ iframe.twitter-share-button {
 		padding: 1px 35px 0 10px;
 		width: 100%;
 		height: 30px;
-		line-height: 30px;
+		line-height: $px30;
 		position: relative;
 		top: 1px;
 		left: 0;
@@ -863,7 +713,7 @@ iframe.twitter-share-button {
 			padding: 0 0 10px;
 			color: #2c8799;
 			font-family: bebas;
-			font-size: 20px;
+			font-size: $px20;
 			border-bottom: 1px solid #aaa;
 		}
 		
@@ -883,8 +733,8 @@ iframe.twitter-share-button {
 				display: block;
 				margin: 0 0 3px;
 				padding: 5px 10px;
-				line-height: 19px;
-				font-size: 12px;
+				line-height: $px19;
+				font-size: $px12;
 				text-decoration: none;
 				background: #ebe4de;
 				
@@ -910,8 +760,8 @@ iframe.twitter-share-button {
 				a {
 					margin: 0;
 					padding: 0;
-					line-height: 19px;
-					font-size: 12px;
+					line-height: $px19;
+					font-size: $px12;
 				}
 			}
 		}
@@ -993,7 +843,7 @@ footer
 		margin: 0;
 		padding: 0;
 		font-family: maagkramp;
-		font-size: 20px;
+		font-size: $px20;
 		color: #fff;
 		text-decoration: none;
 		
@@ -1060,7 +910,7 @@ footer
 	.total-count {
 		padding: 0 5px;
 		height: 24px;
-		line-height: 24px;
+		line-height: $px24;
 		text-align: center;
 	}
 	
@@ -1069,7 +919,7 @@ footer
 		float: left;
 		width: 46px;
 		height: 20px;
-		line-height: 20px;
+		line-height: $px20;
 		color: #ddd;
 		border: 2px solid #ddd;
 		background: #fff;
@@ -1158,7 +1008,7 @@ footer
 			padding: 0;
 			width: 36px;
 			height: 20px;
-			line-height: 20px;
+			line-height: $px20;
 			color: #000;
 			text-decoration: none;
 			text-align: center;
@@ -1262,7 +1112,7 @@ footer
 				margin: 0 5px 0 0;
 				padding: 0 7px;
 				height: 20px;
-				line-height: 20px;
+				line-height: $px20;
 				text-align: center;
 				text-decoration: none;
 				color: #000;
@@ -1290,7 +1140,7 @@ footer
 		margin: 0 5px 0 0;
 		padding: 0 7px;
 		height: 20px;
-		line-height: 20px;
+		line-height: $px20;
 		text-align: center;
 		color: #fff;
 		border: 2px solid #3079ed;
@@ -1353,9 +1203,9 @@ index.php
 					margin: 0;
 					padding: 0;
 					height: 19px;
-					line-height: 19px;
+					line-height: $px19;
 					color: #999;
-					font-size: 12px;
+					font-size: $px12;
 				}
 			}
 
@@ -1414,7 +1264,7 @@ entry
 				padding: 0 0 10px;
 				color: #2c8799;
 				font-family: bebas;
-				font-size: 20px;
+				font-size: $px20;
 				border-bottom: 1px solid #aaa;
 			}
 		}
@@ -1430,7 +1280,7 @@ entry
 		padding: 0;
 		
 		&:before {
-			content: "\63\6c\69\70";
+			content: $clip;
 			margin: 0 5px 0 0;
 			font-family: default-set;
 		}
@@ -1438,7 +1288,7 @@ entry
 		a {
 			margin: 0;
 			padding: 0;
-			line-height: 27px;
+			line-height: $px27;
 		}
 	}
 }
@@ -1489,7 +1339,7 @@ entry
 	h3 {
 		margin: 0 0 5px;
 		padding: 0;
-		font-size: 14px;
+		font-size: $px14;
 		font-weight: bold;
 		color: #4695a6;
 	}
@@ -1514,8 +1364,8 @@ entry
 }
 	
 	p {
-		line-height: 22px;
-		font-size: 12px;
+		line-height: $px22;
+		font-size: $px12;
 	}
 	
 	footer {
@@ -1533,8 +1383,8 @@ entry
 			margin: 0 21px 0 0;
 			padding: 0;
 			height: 13px;
-			line-height: 13px;
-			font-size: 12px;
+			line-height: $px13;
+			font-size: $px12;
 			color: #aaa;
 			position: relative;
 			top: 0;
@@ -1569,8 +1419,8 @@ entry
 			margin: 0;
 			padding: 0;
 			height: 13px;
-			line-height: 13px;
-			font-size: 12px;
+			line-height: $px13;
+			font-size: $px12;
 		}
 		
 		form {
@@ -1584,7 +1434,7 @@ entry
 			margin: 0;
 			padding: 0;
 			color: #2c8799;
-			font-size: 11px;
+			font-size: $px11;
 			background: none;
 			
 			&:hover {
@@ -1618,7 +1468,7 @@ entry
 	h4 {
 		margin: 0 0 5px;
 		padding: 0;
-		font-size: 14px;
+		font-size: $px14;
 		font-weight: bold;
 		color: #4695a6;
 	}
@@ -1671,7 +1521,7 @@ entry
 			padding: 3px;
 			width: 420px;
 			height: 150px;
-			line-height: 19px;
+			line-height: $px19;
 			resize: none;
 			border: 1px solid #aaa;
 			@include box-sizing(border-box);
@@ -1694,7 +1544,7 @@ entry
 		padding: 0;
 		width: 220px;
 		height: 24px;
-		line-height: 24px;
+		line-height: $px24;
 	}
 	
 	dd {
@@ -1726,7 +1576,7 @@ entry
 			margin: 0;
 			padding: 3px;
 			color: #fff;
-			font-size: 14px;
+			font-size: $px14;
 			font-weight: bold;
 			position: absolute;
 			bottom: -20px;
@@ -1834,7 +1684,7 @@ about
 			> h2 {
 				margin: 0 0 20px;
 				padding: 0 0 20px;
-				font-size: 22px;
+				font-size: $px22;
 				color: #2c8799;
 				position: relative;
 				top: 0;

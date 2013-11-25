@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+$sprite-sprite-dimensions: true;
+$sprites:sprite-map("sprite/*.png");///**/
+$sprites-img:sprite-url($sprites);
+$xpos: left;
+@mixin sprite-background($name, $sprites, $sprites-img) {
+	background-image: $sprites-img;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: image-height(sprite-file($sprites, $name));
+	width: image-width(sprite-file($sprites, $name));
+	$ypos: round(nth(sprite-position($sprites, $name),2));
+	background-position: $xpos $ypos;
+}
+
+.icon_search-glass {
+	@include sprite-background(icon_search-glass, $sprites, $sprites-img);
+}
