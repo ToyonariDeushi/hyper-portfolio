@@ -24,8 +24,8 @@
 <?php include_once("../include/aa.php"); ?>
 <div class="wrapper">
 	<?php include_once("../include/header.php"); ?>
+	<?php include_once("../include/breadcrumb.php"); ?>
 	<div class="content">
-		<?php include_once("../include/breadcrumb.php"); ?>
 		<div class="main-cont">
 			<section>
 				<h2>About</h2>
@@ -36,80 +36,6 @@
 			</section>
 			<section>
 				<h2>自己紹介</h2>
-<style>
-#intro-deushi {
-	margin: 0 0 20px;
-	padding: 20px;
-	width: 660px;
-	height: 408px;
-	height: 200px;
-	position: relative;
-	top: 0;
-	left: 0;
-	/*
-	background: url(../images/deushi.jpg) 0 0 no-repeat;
-	*/
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-}
-
-	#intro-deushi dl {
-		margin: 0;
-		padding: 19px;
-		width: 280px;
-		position: absolute;
-		bottom: 20px;
-		left: 20px;
-		border: 1px solid #fff;
-		background: rgba(255, 255, 255, 0.4);
-		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-	}
-	#intro-deushi dl:after {
-		visibility: hidden;
-		display: block;
-		font-size: 0;
-		content: " ";
-		clear: both;
-		height: 0;
-	}
-	* html #intro-deushi dl             { zoom: 1; } /* IE6 */
-	*:first-child+html #intro-deushi dl { zoom: 1; } /* IE7 */
-	
-		#intro-deushi dl * { color: #333; }
-	
-		#intro-deushi dl dt {
-			clear: both;
-			float: left;
-			margin: 0 0 10px;
-			padding: 0;
-			width: 60px;
-		}
-		
-			#intro-deushi dl dd {
-				float: right;
-				margin: 0 0 10px;
-				padding: 0;
-				width: 160px;
-			}
-		
-		#intro-deushi dl dt:last-of-type,
-		#intro-deushi dl dd:last-of-type { margin-bottom: 0; }
-			
-				#intro-deushi dl dd ul { margin: 0; padding: 0; }
-				
-					#intro-deushi dl dd ul li {
-						margin: 0 0 5px;
-						padding: 0;
-					}
-					
-					#intro-deushi dl dd ul li:last-child { margin-bottom: 0; }
-
-</style>
 				<div id="intro-deushi">
 					<dl>
 						<dt>名前</dt>
@@ -141,20 +67,6 @@
 				<h2>SNS</h2>
 */
 ?>
-<style>
-dl#sns-deushi,0
-dl#career-deushi,
-dl#environment-deushi { margin: 0; padding: 0; }
-
-	dl#sns-deushi dt,
-	dl#career-deushi dt,
-	dl#environment-deushi dt { margin: 0 0 5px; padding: 0; }
-	
-		dl#sns-deushi dd,
-		dl#career-deushi dd,
-		dl#environment-deushi dd { margin: 0 0 20px; padding: 0 0 0 10px; }
-
-</style>
 <?php
 /*
 				<dl id="sns-deushi">

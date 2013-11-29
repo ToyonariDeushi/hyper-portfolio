@@ -1,17 +1,20 @@
 @charset "UTF-8";
 
 // 横幅
-$site-width:960px;
+$site-width:980px;
+$main-cont-width:700px;
+$side-cont-width:260px;
 
 // ブレークポイント
 $small:  "only screen and (max-width:767px)";
-$middle: "only screen and (min-width:768px) and (max-width:959px)";
-$large:  "only screen and (min-width:960px)";
+$small-middle: "only screen and (min-width:768px) and (max-width:980px)";
+$middle: "only screen and (max-width:996px)";
+$large:  "only screen and (min-width:980px)";
 
 
-$small-size: 480px;
-$middle-size: 768px;
-$large-size: 980px;
+// $small-size: 480px;
+// $middle-size: 768px;
+// $large-size: 980px;
 
 //
 // $small: "screen and (max-width:767px)";

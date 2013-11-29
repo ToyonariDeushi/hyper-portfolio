@@ -312,6 +312,7 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 <meta name="description" content="<?php echo str_replace("\r\n", "", $data["article_intro"]) ?>" />
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="robots" content="<?php echo $ROBOTS ?>" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <link rel="stylesheet" href="<?php echo $DOCUMENT_ROOT_URL ?>css/style.css" media="all" />
 <link rel="shortcut icon" href="<?php echo $DOCUMENT_ROOT_URL ?>images/icon_favicon.ico" />
 <link rel="icon" href="<?php echo $DOCUMENT_ROOT_URL ?>images/icon_favicon.ico" />
@@ -327,8 +328,8 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 <body id="entry">
 <div class="wrapper">
 	<?php include_once("../include/header.php"); ?>
+	<?php include_once("../include/breadcrumb.php"); ?>
 	<div class="content">
-		<?php include_once("../include/breadcrumb.php"); ?>
 		<div class="main-cont">
 			<article class="entry-article">
 				<header>
@@ -394,9 +395,9 @@ while ( $data_add = mysql_fetch_array($result_add) ) {
 					</ul>
 				</footer>
 			</article>
-			<section>
+			<section id="related-articles">
 				<h2>Related articles</h2>
-				<ul id="related-articles">
+				<ul>
 <?php
 // 関連記事
 $sql_related = "
@@ -463,7 +464,7 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 <?php } else { ?>
 								<li>URL</li>
 <?php } ?>
-								<li>
+								<li class="comment-btn">
 									<form method="post" action="<?php echo $DOCUMENT_ROOT_URL ?>entry/<?php echo $data["date_time"] ?>/<?php echo $data["directory"] ?>/#comment-form">
 										<input type="hidden" name="comment_id" value="<?php echo $data_comment["id"] ?>" />
 										<input type="submit" value="返信" />
@@ -637,7 +638,7 @@ jQuery( function() {
 								<input type="text" name="img_auth" id="img_auth" value="" placeholder="上の画像内の文字を入力してください" />
 							</dd>
 					</dl>
-					<p><input type="submit" name="submit" value="コメントを投稿" /></p>
+					<p class="comment-submit"><input type="submit" name="submit" value="コメントを投稿" /></p>
 				</form>
 			</section>
 		</div>

@@ -1,8 +1,6 @@
 <?php
 include_once("include/config.php");
 
-//テスト
-
 //ページパラメータを変数に格納
 $page = $_REQUEST["page"];
 
@@ -108,8 +106,8 @@ if ( !$_REQUEST["search"] ) {
 <body id="top">
 <div class="wrapper">
 	<?php include_once("include/header.php"); ?>
+	<?php include_once("include/breadcrumb.php"); ?>
 	<div class="content">
-		<?php include_once("include/breadcrumb.php"); ?>
 		<div class="main-cont">
 <?php
 // エントリー情報
