@@ -58,35 +58,35 @@ if ( $_REQUEST["date_time"] ) {
 }
 ?>
 <nav class="breadcrumb">
-			<ol>
-				<li>
-					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-						<a href="<?php echo $DOCUMENT_ROOT_URL ?>" itemprop="url">
-							<span itemprop="title"><?php echo $SITE_TITLE ?></span>
-						</a>
-					</div>
-				</li>
+		<ol>
+			<li>
+				<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="<?php echo $DOCUMENT_ROOT_URL ?>" itemprop="url">
+						<span itemprop="title"><?php echo $SITE_TITLE ?></span>
+					</a>
+				</div>
+			</li>
 <?php
 if ( $middle_flg == TRUE ) {
 ?>
-				<li>
-					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-						<a href="<?php echo $DOCUMENT_ROOT_URL ?><?php echo $middle_path ?>" itemprop="url">
-							<span itemprop="title"><?php echo $middle_name ?></span>
-						</a>
-					</div>
-				</li>
+			<li>
+				<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="<?php echo $DOCUMENT_ROOT_URL ?><?php echo $middle_path ?>" itemprop="url">
+						<span itemprop="title"><?php echo $middle_name ?></span>
+					</a>
+				</div>
+			</li>
 <?php } ?>
 <?php
 if ( $page_flg == TRUE ) {
 ?>
-				<li>
-					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-						<a href="<?php echo $REQUEST_URL ?>" itemprop="url">
-							<span itemprop="title"><?php echo $page_name ?></span>
-						</a>
-					</div>
-				</li>
+			<li>
+				<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="<?php echo $REQUEST_URL ?>" itemprop="url">
+						<span itemprop="title"><?php echo $page_name ?></span>
+					</a>
+				</div>
+			</li>
 <?php } ?>
-			</ol>
-		</nav>
+		</ol>
+	</nav>

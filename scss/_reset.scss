@@ -10,6 +10,9 @@
 //
 //
 //
+
+@import "ptp-13";// フォントサイズ指定
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,8 +33,44 @@ output, progress, section, summary, time, video {
 	background: transparent;
 }
 
+// 追記
+* {
+	font-size: 13px;
+	font-family: "Meiryo", "メイリオ", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "ＭＳ ゴシック", "Osaka－等幅", Osaka-mono, monospace;
+	font-weight: normal;
+	font-style: normal;
+	color: #555;
+	text-decoration: none;
+}
+
+// 追記
+html {
+	overflow-y: scroll;
+}
+
 body {
 	line-height: 1;
+	word-break: break-all;
+}
+
+// 追記
+p {
+	margin: 0 0 1em;
+	line-height: $px26;
+}
+
+// 追記
+em,
+address {
+	font-style: normal;
+}
+
+// 追記
+strong {
+	line-height: $px26;
+	font-size: $px20;
+	font-weight: bold;
+	color: #a22316;
 }
 
 article, aside, dialog, figure, footer, header, 
@@ -39,20 +78,27 @@ hgroup, nav, section, blockquote {
 	display: block;
 }
 
-nav ul {
-	list-style: none;
-}
+//
+// nav ul {
+// 	list-style: none;
+// }
+// 
+// ol {
+// 	list-style: decimal;
+// }
+// 
+// ul {
+// 	list-style: disc;
+// }
+// 
+// ul ul {
+// 	list-style: circle;
+// }
+//
 
-ol {
-	list-style: decimal;
-}
-
-ul {
-	list-style: disc;
-}
-
-ul ul {
-	list-style: circle;
+// 追記
+ul, li, dl, dt, dd {
+	list-style-type: none;
 }
 
 blockquote, q {
@@ -73,8 +119,17 @@ del {
 	text-decoration: line-through;
 }
 
+//
+// mark {
+// 	background: none;
+// }
+//
+// 追記
 mark {
-	background: none;
+	display: inline;
+	font-size: inherit;
+	font-weight: inherit;
+	background: #ff0;
 }
 
 abbr[title], dfn[title] {
@@ -97,11 +152,126 @@ hr {
 	padding: 0;
 }
 
-input[type="submit"], input[type="button"], button {
-    padding: 0 !important;
-    margin: 0 !important;
+label {
+	cursor: pointer;
+}
+
+//
+// input[type="submit"], input[type="button"], button {
+//     padding: 0 !important;
+//     margin: 0 !important;
+// }
+//
+
+// 追加
+input[type="text"],
+input[type="password"],
+textarea, select {
+	outline: none;
+}
+
+// 追記
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: text-bottom;
+	border: 0;
 }
 
 input, select, a img {
 	vertical-align: middle;
 }
+
+a {
+	cursor: pointer;
+	color: #2c8799;
+	text-decoration: none;
+	outline: 0;
+
+	&:hover,
+	&:active {
+		text-decoration: underline;
+	}
+}
+
+a.blank[target=_blank] {
+	padding: 0 20px 0 0;
+	position: relative;
+	top: 0;
+	left: 0;
+
+	&:before {
+		content: "";
+		width: 10px;
+		height: 6px;
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		border: 1px solid #f18f99;
+		border-top: 3px solid #f18f99;
+		background: rgba(255, 255, 255, 0.3);
+	}
+
+	&:after {
+		content: "";
+		width: 10px;
+		height: 6px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: 1px solid #cc1125;
+		border-top: 3px solid #cc1125;
+		background: rgba(255, 255, 255, 0.3);
+	}
+}
+
+// 追記
+::selection {
+	color: #cb8484;
+	background: #fed6d6;
+}
+
+::-moz-selection {
+	color: #cb8484;
+	background: #fed6d6;
+}
+				
+:-moz-placeholder {
+	color: #a9a9a9;
+}
+
+::-webkit-input-placeholder {
+	color: #a9a9a9;
+}
+
+small {
+	color: #f00;
+}
+
+ruby {
+	display: inline-table;
+	margin: 0;
+	padding: 0;
+	border: none;
+	white-space: nowrap;
+	text-indent: 0;
+	vertical-align: text-bottom !important;
+	text-decoration: none;
+	text-align: center;
+	line-height: 100%;
+}
+
+ruby rt,
+a:link ruby rt,
+a:visited ruby rt {
+	display: table-header-group;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font: inherit;
+	font-size: 70%;
+	line-height: 100%;
+	text-decoration: none;
+}
+
+ruby rp { display: none; }
