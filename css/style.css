@@ -477,6 +477,19 @@ span.bold {
   padding: 0;
 }
 
+.normal-dl {
+  margin: 0;
+  padding: 0;
+}
+.normal-dl dt {
+  margin: 0 0 5px;
+  padding: 0;
+}
+.normal-dl dd {
+  margin: 0 0 20px;
+  padding: 0 0 0 10px;
+}
+
 /*----------------------------------------------------------------------------------------------------
 
 
@@ -1833,131 +1846,21 @@ about
 
 
 ----------------------------------------------------------------------------------------------------*/
-/*
-#about {
-	
-	#main-cont {
-		
-		> section {
-			margin: 0 0 20px;
-			padding: 20px;
-			background: #fff;
-			@include clearfix;
-			
-			> h2 {
-				margin: 0 0 20px;
-				padding: 0 0 20px;
-				font-size: $px22;
-				color: #2c8799;
-				position: relative;
-				top: 0;
-				left: 0;
-				
-				&:before {
-					content: "";
-					margin: 0;
-					padding: 0;
-					width: 660px;
-					height: 8px;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					background: url(../images/bg_bias.gif) 0 0 repeat;
-				}
-			}
-			
-			> p {
-				
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
-}*/
-#intro-deushi {
-  margin: 0 0 20px;
-  padding: 20px;
-  width: 660px;
-  height: 408px;
-  height: 200px;
+.about-article {
+  margin: 0 0 40px;
+  padding: 2.85714%;
+  width: 100%;
   position: relative;
   top: 0;
   left: 0;
+  background: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#intro-deushi dl {
-  margin: 0;
-  padding: 19px;
-  width: 280px;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  border: 1px solid #fff;
-  background: rgba(255, 255, 255, 0.4);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#intro-deushi dl:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-#intro-deushi dl * {
-  color: #333;
-}
-#intro-deushi dt {
-  clear: both;
-  float: left;
-  margin: 0 0 10px;
+.about-article h2 {
+  margin: 0 0 6px;
   padding: 0;
-  width: 60px;
-}
-#intro-deushi dt:last-of-type {
-  margin-bottom: 0;
-}
-#intro-deushi dd {
-  float: right;
-  margin: 0 0 10px;
-  padding: 0;
-  width: 160px;
-}
-#intro-deushi dd:last-of-type {
-  margin-bottom: 0;
-}
-#intro-deushi ul {
-  margin: 0;
-  padding: 0;
-}
-#intro-deushi li {
-  margin: 0 0 5px;
-  padding: 0;
-}
-#intro-deushi li:last-child {
-  margin-bottom: 0;
-}
-
-#sns-deushi,
-#career-deushi,
-#environment-deushi {
-  margin: 0;
-  padding: 0;
-}
-#sns-deushi dt,
-#career-deushi dt,
-#environment-deushi dt {
-  margin: 0 0 5px;
-  padding: 0;
-}
-#sns-deushi dd,
-#career-deushi dd,
-#environment-deushi dd {
-  margin: 0 0 20px;
-  padding: 0 0 0 10px;
+  font-size: 170%;
+  color: #2c8799;
 }

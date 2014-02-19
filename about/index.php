@@ -27,39 +27,39 @@
 	<?php include_once("../include/breadcrumb.php"); ?>
 	<div class="content">
 		<div class="main-cont">
-			<section>
+			<section class="about-article">
 				<h2>About</h2>
 				<p>このサイトは出牛の趣味全開かつ自己満足的なポートフォリオサイトです。</p>
 				<p>WordPressやMovable Typeといった、外部のCMSは一切使っていません。<br />データベースの作成から全て手作りのハンドメイドCMSです。</p>
 				<p>このサイトでは様々なことを実験的にやっていこうかと思っています。<br />もし記載している情報に何か誤りがございましたら、コメント頂くか、お問い合わせからお知らせ頂けると幸いです。</p>
 				<p>尚、当サイトはFirefox及び、Google Chromeでの閲覧を推奨しています。</p>
 			</section>
-			<section>
+			<section class="about-article">
 				<h2>自己紹介</h2>
-				<div id="intro-deushi">
-					<dl>
-						<dt>名前</dt>
-							<dd>出牛 豊成</dd>
-						<dt>HN</dt>
-							<dd>ハイパー牛</dd>
-						<dt>生年月日</dt>
-							<dd><time datetime="1983-10-23">1983年10月23日</time></dd>
-						<dt>職業</dt>
-							<dd>
-								<ul>
-									<li>WEBデザイナー</li>
-									<li>WEBディレクター</li>
-									<li>マークアップエンジニア</li>
-									<li>PHPプログラマ</li>
-								</ul>
-							</dd>
-					</dl>
-				</div>
-				<figure class="fL-img"><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/hyper-ushi.png" alt="ハイパー牛" width="160" height="282" /></figure>
+				<dl class="normal-dl">
+					<dt>名前</dt>
+						<dd>出牛 豊成</dd>
+					<dt>HN</dt>
+						<dd>ハイパー牛</dd>
+					<dt>生年月日</dt>
+						<dd><time datetime="1983-10-23">1983年10月23日</time></dd>
+				</dl>
+				<figure class="fR-img"><img src="<?php echo $DOCUMENT_ROOT_URL ?>images/hyper-ushi.png" alt="ハイパー牛" width="160" height="282" /></figure>
 				<p>デザインもコーディングもプログラム(PHP)もディレクションも、何でもやりたがりなWEBデザイナーです。</p>
-				<p>初めてHTMLに触れたのが高校2年のときで、それ以来HTMLは非常に好きで、ソースコードに対しては誰よりも愛を注いでいる自信があります。<br />いかに美しく綺麗に、メンテナンス性に優れ、文法的意味をもつソースコードを書くか、ということに注力しています。</p>
-				<p>Photoshopを用いた写真の補正・加工を得意とします。</p>
-				<p>アニメとゲームと黒ビールとデスメタルが大好きです。<br />残念ながらヒップホップは聴きません。レゲェも聴きません。</p>
+				<p>最近はフロントエンドをやっていることのほうが多いような気がします。</p>
+				<dl class="normal-dl">
+					<dt>LIKE</dt>
+						<dd>
+							<ul>
+								<li>黒ビール</li>
+								<li>アニメ</li>
+								<li>Xbox 360</li>
+								<li>メロデス</li>
+								<li>R&amp;B</li>
+								<li>ホラー映画</li>
+							</ul>
+						</dd>
+				</dl>
 			</section>
 <?php
 /*
@@ -86,9 +86,9 @@
 			</section>
 */
 ?>
-			<section>
+			<section class="about-article">
 				<h2>経歴</h2>
-				<dl id="career-deushi">
+				<dl class="normal-dl">
 					<dt>2012年5月～</dt>
 						<dd>株式会社タイレルシステムズに業務委託で入社ののち、同年7月より正社員で入社。</dd>
 					<dt>2011年9月～2012年12月</dt>
@@ -109,7 +109,9 @@
 						<dd>高校2年生の頃にホームページビルダーを購入し、HTMLで趣味の自サイトを作成。<br  />サーバーは<a href="http://www.freett.com/" rel="nofollow" class="blank">フリーティケットシアター</a>の無料レンタルスペースを使用していました。<br  />初めてHTMLに触れ、HTMLに興味を持った年になりました。</dd>
 				</dl>
 			</section>
-			<section>
+<?php
+/*
+			<section class="about-article">
 				<h2>スキル</h2>
 				<ul>
 					<li>(X)HTML　<span>★★★★★</span></li>
@@ -125,6 +127,8 @@
 					<li>Flash　<span>★★</span>☆☆☆</li>
 				</ul>
 			</section>
+*/
+?>
 <?php
 /*
 			<section>

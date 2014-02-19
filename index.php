@@ -104,6 +104,7 @@ if ( !$_REQUEST["search"] ) {
 <![endif]-->
 </head>
 <body id="top">
+<?php include_once("include/aa.php"); ?>
 <div class="wrapper">
 	<?php include_once("include/header.php"); ?>
 	<?php include_once("include/breadcrumb.php"); ?>

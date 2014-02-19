@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>
+<!--
+
+
+$(document).ready(function(){
+ $(".tgl-cont").hide();
+ $("h4.trigger").click(function(){
+  $(this).toggleClass("active").next().slideToggle("normal");
+ });
+});
+
+$(document).ready(function() {
+	$("p:contains('重要')").addClass("test");
+});
+
+$(document).ready(function() {
+	
+	$(".test").toggle(
+		function() {
+			$(this).addClass("push"),
+			$(".sore").css("color", "blue").fadeOut();
+		},
+		function() {
+			$(this).removeClass("push"),
+			$(".sore").css("color", "black").fadeIn();
+		}
+	);
+	
+});
+
+$(function() {
+	$(".hidden").hide();
+	hiddenCont()
+	function hiddenCont() {
+		$(window).scroll(function() {
+			$(".hidden").fadeIn();
+		});
+	}
+	
+	
+	toTopScr()
+	function toTopScr(){
+		$(window).scroll(function(){
+			$('.toTopBtn').fadeIn()
+		})
+	}
+});
+-->
+</script>
+
+<style>
+	.test {
+		cursor: pointer;
+		padding: 10px;
+		color: #900;
+		background: #fc0;
+	}
+	
+	.push {
+		color: #fff;
+		background: #00f;
+	}
+	
+	.toTopBtn {
+		display: none;
+	}
+</style>
+
+</head>
+
+<body>
+<p>あいうえお重要かきくけこ</p>
+<p class="sore">それほどでもない感じ</p>
+
+<h4 class="trigger">開閉ボタン</h4>
+<div class="tgl-cont">
+		<p>テキストコンテンツ</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p class="toTopBtn">お試しコンテンツ</p>
+
+<p class="hidden">隠しコンテンツ</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>終わり</p>
+</body>
+</html>

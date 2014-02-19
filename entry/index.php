@@ -326,6 +326,7 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 <![endif]-->
 </head>
 <body id="entry">
+<?php include_once("../include/aa.php"); ?>
 <div class="wrapper">
 	<?php include_once("../include/header.php"); ?>
 	<?php include_once("../include/breadcrumb.php"); ?>
