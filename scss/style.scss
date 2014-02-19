@@ -59,6 +59,21 @@ span.bold { font-weight: bold; }
 .fL-img { float: left; margin: 0 20px 20px 0; padding: 0; }
 .fR-img { float: right; margin: 0 0 20px 20px; padding: 0; }
 
+.normal-dl {
+	margin: 0;
+	padding: 0;
+	
+	dt {
+		margin: 0 0 5px;
+		padding: 0;
+	}
+	
+	dd {
+		margin: 0 0 20px;
+		padding: 0 0 0 10px;
+	}
+}
+
 /*----------------------------------------------------------------------------------------------------
 
 
@@ -1439,128 +1454,20 @@ about
 
 
 ----------------------------------------------------------------------------------------------------*/
-/*
-#about {
-	
-	#main-cont {
-		
-		> section {
-			margin: 0 0 20px;
-			padding: 20px;
-			background: #fff;
-			@include clearfix;
-			
-			> h2 {
-				margin: 0 0 20px;
-				padding: 0 0 20px;
-				font-size: $px22;
-				color: #2c8799;
-				position: relative;
-				top: 0;
-				left: 0;
-				
-				&:before {
-					content: "";
-					margin: 0;
-					padding: 0;
-					width: 660px;
-					height: 8px;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					background: url(../images/bg_bias.gif) 0 0 repeat;
-				}
-			}
-			
-			> p {
-				
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
-}*/
-
-#intro-deushi {
-	margin: 0 0 20px;
-	padding: 20px;
-	width: 660px;
-	height: 408px;
-	height: 200px;
+.about-article {
+	margin: 0 0 40px;
+	padding: (20px / ($main-cont-width / 100)) + 0%;
+	width: 100%;
 	position: relative;
 	top: 0;
 	left: 0;
+	background: #fff;
 	@include box-sizing(border-box);
-
-	dl {
-		margin: 0;
-		padding: 19px;
-		width: 280px;
-		position: absolute;
-		bottom: 20px;
-		left: 20px;
-		border: 1px solid #fff;
-		background: rgba(255, 255, 255, 0.4);
-		@include box-sizing(border-box);
-		@include clearfix;
 		
-		* {
-			color: #333;
-		}
-	}
-		
-	dt {
-		clear: both;
-		float: left;
-		margin: 0 0 10px;
+	h2 {
+		margin: 0 0 6px;
 		padding: 0;
-		width: 60px;
-		
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-	
-	dd {
-		float: right;
-		margin: 0 0 10px;
-		padding: 0;
-		width: 160px;
-		
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-	
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-	
-	li {
-		margin: 0 0 5px;
-		padding: 0;
-		
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-}
-
-#sns-deushi,
-#career-deushi,
-#environment-deushi {
-	margin: 0;
-	padding: 0;
-	
-	dt {
-		margin: 0 0 5px;
-		padding: 0;
-	}
-	
-	dd {
-		margin: 0 0 20px;
-		padding: 0 0 0 10px;
+		font-size: $px22;
+		color: #2c8799;
 	}
 }
